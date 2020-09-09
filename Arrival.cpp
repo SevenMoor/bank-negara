@@ -11,6 +11,8 @@ void Arrival::process(){
     else
         simulation->getBank()->getQueue()->add(client);
     double nextTime = simulation->getInterval() + exp(-1)*exp(random());
-    if (nextTime <= simulation->getExpectedDuration())
-        Arrival first = Arrival(nextTime,simulation);
+    if (nextTime <= simulation->getExpectedDuration()){
+        Arrival next = Arrival(nextTime,simulation);
+        simulation->add(next);
+    }
 }

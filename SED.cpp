@@ -5,7 +5,7 @@ SED::SED(double initTime) : initTime(initTime){
 }
 
 void SED::add(Event e){
-
+    
 }
 
 void SED::start(){
