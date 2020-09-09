@@ -7,14 +7,9 @@
 class Arrival : public Event {
 
     public :
-        Arrival(double triggerTime); 
+        Arrival(); 
         void process(); 
-    protected : 
-        double getTriggerTime(); 
-        void setTriggerTime(double triggerTime); 
-
-    private : 
-        double triggerTime; 
+   
 
 }; 
 #endif

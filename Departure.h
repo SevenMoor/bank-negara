@@ -8,10 +8,9 @@
 class Departure : public Event{
 
     public : 
-        Departure(double triggerTime, Client client, Cashier cashier); 
+        Departure(Client client, Cashier cashier); 
         void process(); 
     private :
-        double triggerTime;
         Client client;
         Cashier cashier; 
 
