@@ -5,9 +5,9 @@
 
 void Arrival::process(){
     Client client = Client(simulation->getCurrentTime());
-    Cashier* cashier = &(simulation->getBank()->freeCashier());
-    if(cashier!=nullptr)
-        cashier->serve(client);
+    Cashier cashier = simulation->getBank()->freeCashier();
+    if(cashier.getExists())
+        cashier.serve(client);
     else
         simulation->getBank()->getQueue()->add(client);
     double nextTime = simulation->getInterval() + exp(-1)*exp(random());

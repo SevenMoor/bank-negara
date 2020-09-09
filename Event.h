@@ -11,7 +11,7 @@ class Event {
         Simulation* simulation; 
 
     public :
-        Event(double beginHour = 0, Simulation* simulation): time(beginHour), simulation(simulation){}
+        Event(Simulation* simulation, double beginHour = 0): time(beginHour), simulation(simulation){}
         virtual void process(); 
         double getTime(); 
 }; 

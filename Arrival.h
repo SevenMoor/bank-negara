@@ -6,7 +6,7 @@
 
 class Arrival : public Event {
     public :
-        Arrival(double time, Simulation* simulation) : Event(time,simulation){}
+        Arrival(double time, Simulation* simulation) : Event(simulation,time){}
         void process();
 }; 
 #endif
