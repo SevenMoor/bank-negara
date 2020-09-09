@@ -1,1 +1,1 @@
-#include "cashier.h"
+#include "Cashier.h"
