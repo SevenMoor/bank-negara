@@ -1,6 +1,8 @@
 #ifndef CASHIER_H
 #define CASHIER_H
 
+#include "Client.h"
+
 class Cashier{
     private:
         double occupationRate;
@@ -9,6 +11,7 @@ class Cashier{
         bool available;
         Client client;
     public:
+        Cashier(double averageServiceTime, Bank bank);
         double getOccupationRate();
         int getClientCount();
         double getAverageServiceTime();

@@ -8,7 +8,9 @@ class Bank{
         int cashierCount;
         int clientCount;
         Cashier* cashiers;
+        double averageServiceTime;
     public:
+        Bank(int cashierCount, double averageServiceTime);
         int getCashierCount();
         int getClientCount();
         Cashier freeCashier();
