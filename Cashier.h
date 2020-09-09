@@ -13,15 +13,18 @@ class Cashier{
         double averageServiceTime;
         bool available;
         Client client;
-        Bank bank; 
+        Bank *bank; 
+        bool exists; 
     public:
-        Cashier(double averageServiceTime, Bank bank);
+        Cashier(double averageServiceTime, Bank *bank);
+        Cashier(); 
         double getOccupationRate();
         int getClientCount();
         double getAverageServiceTime();
         bool isAvailable();
         void serve(Client client);
         void free();
+        bool getExists(); 
 };
 
 #endif

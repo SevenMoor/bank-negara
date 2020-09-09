@@ -18,9 +18,9 @@ class Bank{
         Cashier** cashiers;
         Queue *queue; 
         double averageServiceTime;
-        Simulation simulation; 
+        Simulation *simulation; 
     public:
-        Bank(int cashierCount, double averageServiceTime);
+        Bank(int cashierCount, double averageServiceTime, Simulation *Simulation);
         int getCashierCount();
         int getClientCount();
         Cashier freeCashier();

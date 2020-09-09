@@ -1,9 +1,9 @@
 #include "Bank.h"
 
-Bank::Bank(int cashierCount, double averageServiceTime){
+Bank::Bank(int cashierCount, double averageServiceTime, Simulation *Simulation){
     this->cashierCount = cashierCount; 
     this->averageServiceTime = averageServiceTime; 
-
+    this->simulation = simulation; 
     cashiers = new Cashier*[cashierCount]; 
     srand(time(nullptr)); 
     for(int i=0; i<cashierCount; i++){
@@ -21,7 +21,10 @@ int Bank::getClientCount(){
 }
 
 Cashier Bank::freeCashier(){
-    // TODO 
+    for(int i=0; i<cashierCount; i++){
+        if(cashiers[i]->isAvailable()) return *cashiers[i]; 
+    }
+    return Cashier(); 
 }
 
 Queue* Bank::getQueue(){
