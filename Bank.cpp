@@ -8,8 +8,10 @@ Bank::Bank(int cashierCount, double averageServiceTime, Simulation *Simulation){
     srand(time(nullptr)); 
     for(int i=0; i<cashierCount; i++){
         double random_time = averageServiceTime + std::rand()/((RAND_MAX + 1u)/averageServiceTime); 
-        cashiers[i] = new Cashier(random_time, *this); 
+        cashiers[i] = new Cashier(random_time, this); 
     }
+
+    queue = new Queue(this); 
 }
 
 int Bank::getCashierCount(){

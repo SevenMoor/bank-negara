@@ -30,10 +30,13 @@ bool Cashier::isAvailable(){
 }
 void Cashier::serve(Client client){ 
     // TODO
+    // Create departure
+    // add event to simulation
+
      
 }
 void Cashier::free(){
-    // TODO
+    available = false; 
 }
 
 bool Cashier::getExists(){

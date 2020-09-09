@@ -14,9 +14,9 @@ class Queue{
         int maxLength;
         double averageLength;
         bool empty;
-        Bank bank;
+        Bank *bank;
     public:
-        Queue(Bank bank);
+        Queue(Bank *bank);
         int getMaxLength();
         double getAverageLength();
         bool isEmpty();

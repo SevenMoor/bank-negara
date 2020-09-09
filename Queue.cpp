@@ -1,7 +1,7 @@
 #include "Queue.h"
 
 
-Queue::Queue(Bank bank){
+Queue::Queue(Bank *bank){
     this->bank = bank; 
 }
 
@@ -10,7 +10,7 @@ int Queue::getMaxLength(){
 }
 
 double Queue::getAverageLength(){
-    return clients.size() / bank.getClientCount(); 
+    return clients.size() / bank->getClientCount(); 
 }
 
 bool Queue::isEmpty(){
