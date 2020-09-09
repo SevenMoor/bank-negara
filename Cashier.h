@@ -2,6 +2,9 @@
 #define CASHIER_H
 
 #include "Client.h"
+#include "Departure.h"
+#include "Arrival.h"
+#include "Bank.h"
 
 class Cashier{
     private:
@@ -10,6 +13,7 @@ class Cashier{
         double averageServiceTime;
         bool available;
         Client client;
+        Bank bank; 
     public:
         Cashier(double averageServiceTime, Bank bank);
         double getOccupationRate();

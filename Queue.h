@@ -3,8 +3,9 @@
 
 #include "Bank.h"
 #include "Client.h"
-#include <deque>
-
+#include <iostream> 
+#include <deque> 
+  
 using namespace std;
 
 class Queue{
@@ -21,6 +22,7 @@ class Queue{
         bool isEmpty();
         void add(Client client);
         Client pop();
+        void printQueue(); 
 };
 
 #endif

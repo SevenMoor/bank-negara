@@ -5,7 +5,7 @@ class Client {
     public : 
         Client(double arrivalTime); 
         double getArrivalTime(); 
-
+        Client(); 
     private :
         double arrivalTime; 
 
