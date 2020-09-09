@@ -7,9 +7,7 @@
 class Arrival : public Event {
 
     public :
-        Arrival(); 
-        void process(); 
-   
-
+        Arrival(double time) : Event(time){}
+        void process();
 }; 
 #endif

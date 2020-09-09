@@ -8,7 +8,7 @@
 class Departure : public Event{
 
     public : 
-        Departure(Client client, Cashier cashier); 
+        Departure(Client client, Cashier cashier, double time) : client(client), cashier(cashier), Event(time){} 
         void process(); 
     private :
         Client client;

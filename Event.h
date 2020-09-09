@@ -5,12 +5,12 @@
 
 class Event {
     private : 
-        double beginHour; 
+        double time; 
 
     public :
         Event(double beginHour = 0); 
         virtual void process(); 
-        double getBeginHour(); 
+        double getTime(); 
 }; 
 
 
