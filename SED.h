@@ -8,7 +8,7 @@ using namespace std;
 
 class SED{
     public :
-        SED(double initTime);
+        SED(double initTime = 0);
         void add(Event event); 
         double getCurrentTime(); 
         void start(); 

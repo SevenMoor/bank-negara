@@ -2,18 +2,20 @@
 #define SIMULATION_H
 
 #include "SED.h"
+#include "Bank.h"
 
 class Simulation : public SED {
     public :
-        Simulation(double averageArrivalTime, double expectedDuration, double expectedServiceTime, double interval) : averageArrivalTime(averageArrivalTime), expectedDuration(expectedDuration), expectedServiceTime(expectedServiceTime), interval(interval),  SED(0) {}
-        double getAverageArrivalTime();
+        Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount);
+        double getInterval();
         double getExpectedDuration(); 
+        Bank* getBank();
     private : 
-        double averageArrivalTime;
         double expectedDuration;
         double expectedServiceTime;
         double interval;
-
+        int cashierCount;
+        Bank bank;
 }; 
 
 #endif
