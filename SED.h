@@ -2,6 +2,8 @@
 #define SED_H
 
 #include <queue>
+#include <vector>
+
 #include "Event.h"
 
 using namespace std;
@@ -13,7 +15,7 @@ class SED{
         double getCurrentTime(); 
         void start(); 
     protected:
-        priority_queue<Event> schedule;
+        priority_queue<Event,vector<Event>,EventComparator> schedule;
         double initTime; 
         double currentTime;
 }; 
