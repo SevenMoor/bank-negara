@@ -10,6 +10,7 @@ class Simulation : public SED {
         double getInterval();
         double getExpectedDuration(); 
         Bank* getBank();
+        void printResults();
     private : 
         double expectedDuration;
         double expectedServiceTime;
