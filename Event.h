@@ -8,10 +8,10 @@ class Event {
         double time;
 
     protected:
-        Simulation* simulation; 
+        Simulation *simulation; 
 
     public :
-        Event(Simulation* simulation, double beginHour = 0): time(beginHour), simulation(simulation){}
+        Event(Simulation *simulation, double beginHour = 0): simulation(simulation), time(beginHour){}
         virtual void process(); 
         double getTime(); 
 }; 

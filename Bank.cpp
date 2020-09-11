@@ -1,6 +1,6 @@
 #include "Bank.h"
 
-Bank::Bank(int cashierCount, double averageServiceTime, Simulation *Simulation){
+Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->cashierCount = cashierCount; 
     this->averageServiceTime = averageServiceTime; 
     this->simulation = simulation; 
@@ -35,4 +35,8 @@ Queue* Bank::getQueue(){
 
 Cashier** Bank::getCashiers(){
     return cashiers; 
+}
+
+Simulation* Bank::getSimulation(){
+    return simulation; 
 }

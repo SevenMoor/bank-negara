@@ -1,7 +1,8 @@
 #ifndef SED_H
 #define SED_H
 
-#include <queue>
+#include <iostream> 
+#include <queue> 
 #include "Event.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ class SED{
         priority_queue<Event> schedule;
         double initTime; 
         double currentTime;
+        Event *event; 
 }; 
 
 #endif

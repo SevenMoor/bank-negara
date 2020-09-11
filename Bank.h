@@ -20,13 +20,13 @@ class Bank{
         double averageServiceTime;
         Simulation *simulation; 
     public:
-        Bank(int cashierCount, double averageServiceTime, Simulation *Simulation);
+        Bank(int cashierCount, double averageServiceTime, Simulation *simulation);
         int getCashierCount();
         int getClientCount();
         Cashier freeCashier();
         Queue* getQueue(); 
         Cashier** getCashiers(); 
-        Simulation getSimulation(); 
+        Simulation *getSimulation(); 
 };
 
 #endif
