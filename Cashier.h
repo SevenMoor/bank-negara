@@ -6,6 +6,8 @@
 #include "Arrival.h"
 #include "Bank.h"
 
+class Bank; 
+
 class Cashier{
     private:
         double occupationRate;

@@ -5,6 +5,8 @@
 #include "Cashier.h"
 #include "Client.h"
 
+class Cashier; 
+
 class Departure : public virtual Event{
 
     public : 

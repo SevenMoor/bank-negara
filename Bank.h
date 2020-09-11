@@ -8,6 +8,7 @@
 #include <iostream>
 #include <ctime>
 
+class Simulation; 
 
 using namespace std; 
 

@@ -4,6 +4,8 @@
 #include <random>
 #include <math.h>
 
+class Bank; 
+
 Simulation::Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount) : expectedDuration(expectedDuration), expectedServiceTime(expectedServiceTime), interval(interval), cashierCount(cashierCount), SED(), bank(Bank(cashierCount,expectedServiceTime,this)) {
    double firstTime = interval + exp(-1)*exp(random());
    Arrival first = Arrival(firstTime,this);

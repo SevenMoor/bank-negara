@@ -1,5 +1,6 @@
 #include "Bank.h"
 
+
 Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->cashierCount = cashierCount; 
     this->averageServiceTime = averageServiceTime; 

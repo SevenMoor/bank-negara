@@ -8,6 +8,8 @@
   
 using namespace std;
 
+class Bank; 
+
 class Queue{
     private :
         deque<Client> clients;

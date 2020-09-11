@@ -12,7 +12,7 @@ Cashier::Cashier(){
 }
 
 double Cashier::getOccupationRate(){
-    occupationRate = isBusy/bank->getCashierCount(); 
+    occupationRate = isBusy/bank->getSimulation()->getExpectedDuration(); 
     return occupationRate; 
 }
 int Cashier::getClientCount(){
