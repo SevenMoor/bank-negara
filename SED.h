@@ -17,7 +17,6 @@ class SED{
         priority_queue<Event,vector<Event>,EventComparator> schedule;
         double initTime; 
         double currentTime;
-        Event *event; 
 }; 
 
 #endif
