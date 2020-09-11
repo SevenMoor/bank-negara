@@ -8,5 +8,6 @@ void Departure::process(){
     else{
         cashier->free();
     }
+    simulation->provideWaitTimeEntry(simulation->getCurrentTime()-client.getArrivalTime());
     delete &client;
 }

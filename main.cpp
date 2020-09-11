@@ -6,7 +6,9 @@
 
 int main(){
 
-    Simulation *simulation; 
-    simulation = new Simulation(40, 2, 5, 3);
+    Simulation simulation(40,2,5,3);
+    simulation.start();
+    simulation.printResults();
 
+    return 0;
 }
