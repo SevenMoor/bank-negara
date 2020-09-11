@@ -29,14 +29,14 @@ Cashier Bank::freeCashier(){
     return Cashier(); 
 }
 
-Queue* Bank::getQueue(){
+Queue *Bank::getQueue(){
     return queue; 
 }
 
-Cashier** Bank::getCashiers(){
+Cashier **Bank::getCashiers(){
     return cashiers; 
 }
 
-Simulation* Bank::getSimulation(){
+Simulation *Bank::getSimulation(){
     return simulation; 
 }
