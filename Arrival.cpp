@@ -13,6 +13,6 @@ void Arrival::process(){
     double nextTime = simulation->getInterval() + exp(-1)*exp(random());
     if (nextTime <= simulation->getExpectedDuration()){
         Arrival next = Arrival(nextTime,simulation);
-        simulation->add(next);
+        simulation->add(&next);
     }
 }
