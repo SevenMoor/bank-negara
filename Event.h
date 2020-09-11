@@ -8,7 +8,7 @@ class Event {
         double time;
     public :
         Event(double beginHour = 0) :  time(beginHour){}
-        virtual void process(); 
+        virtual void process() = 0; 
         double getTime(); 
 }; 
 

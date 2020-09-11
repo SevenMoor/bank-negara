@@ -9,6 +9,8 @@
 #include <ctime>
 
 class Simulation; 
+class Cashier;
+class Queue;
 
 using namespace std; 
 

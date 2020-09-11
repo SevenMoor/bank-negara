@@ -19,8 +19,8 @@ class Cashier{
         bool exists; 
         double isBusy; 
     public:
+        Cashier();
         Cashier(double averageServiceTime, Bank *bank);
-        Cashier(); 
         double getOccupationRate();
         int getClientCount();
         double getAverageServiceTime();

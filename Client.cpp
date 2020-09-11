@@ -6,3 +6,7 @@ Client::Client(double arrivalTime){
 double Client::getArrivalTime(){
     return arrivalTime; 
 }
+
+Client::Client(){
+    
+}

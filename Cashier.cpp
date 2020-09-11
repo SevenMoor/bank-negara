@@ -1,14 +1,14 @@
 #include "Cashier.h"
 
 
+Cashier::Cashier(){
+    exists = false; 
+}
+
 Cashier::Cashier(double averageServiceTime, Bank *bank){
     this->bank = bank; 
     this->averageServiceTime = averageServiceTime; 
     exists = true; 
-}
-
-Cashier::Cashier(){
-    exists = false; 
 }
 
 double Cashier::getOccupationRate(){
@@ -31,7 +31,7 @@ bool Cashier::isAvailable(){
 }
 void Cashier::serve(Client client){ 
     Departure departure(client, this, bank->getSimulation()->getCurrentTime(), bank->getSimulation()); 
-    bank->getSimulation()->add(departure);  
+    bank->getSimulation()->add(&departure);  
     isBusy += averageServiceTime; 
 }
 void Cashier::free(){
@@ -40,8 +40,4 @@ void Cashier::free(){
 
 bool Cashier::getExists(){
     return exists; 
-}
-
-Simulation *Bank::getSimulation(){
-    return simulation; 
 }
