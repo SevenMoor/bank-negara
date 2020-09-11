@@ -10,7 +10,7 @@ int Queue::getMaxLength(){
 }
 
 double Queue::getAverageLength(){
-    return clients.size() / bank->getClientCount(); 
+    return maxLength / bank->getSimulation()->getExpectedDuration(); 
 }
 
 bool Queue::isEmpty(){
@@ -18,10 +18,14 @@ bool Queue::isEmpty(){
 }
 
 void Queue::add(Client client){
+    maxLength++; 
     clients.push_back(client); 
 }
 
 Client Queue::pop(){
-    clients.pop_front();
+    Client client = clients.front(); 
+    averageLength += (bank->getSimulation()->getCurrentTime() - client.getArrivalTime()) * clients.size(); 
+    clients.pop_front(); 
+    return client; 
 }
 

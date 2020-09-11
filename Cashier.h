@@ -15,6 +15,7 @@ class Cashier{
         Client client;
         Bank *bank; 
         bool exists; 
+        double isBusy; 
     public:
         Cashier(double averageServiceTime, Bank *bank);
         Cashier(); 

@@ -5,14 +5,14 @@
 #include "Cashier.h"
 #include "Client.h"
 
-class Departure : public Event{
+class Departure : public virtual Event{
 
     public : 
-        Departure(Client client, Cashier cashier, double time, Simulation* simulation) : client(client), cashier(cashier), Event(simulation,time){} 
+        Departure(Client client, Cashier *cashier, double time, Simulation *simulation) : client(client), cashier(cashier), Event(simulation,time){} 
         void process(); 
     private :
         Client client;
-        Cashier cashier;
+        Cashier *cashier;
 };
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef Queue_H
+#define Queue_H
 
 #include "Bank.h"
 #include "Client.h"
@@ -9,13 +9,13 @@
 using namespace std;
 
 class Queue{
-    private:
+    private :
         deque<Client> clients;
         int maxLength;
         double averageLength;
         bool empty;
         Bank *bank;
-    public:
+    public :
         Queue(Bank *bank);
         int getMaxLength();
         double getAverageLength();

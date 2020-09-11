@@ -1,9 +1,8 @@
 #ifndef SED_H
 #define SED_H
 
-#include <queue>
-#include <vector>
-
+#include <iostream> 
+#include <queue> 
 #include "Event.h"
 
 using namespace std;
