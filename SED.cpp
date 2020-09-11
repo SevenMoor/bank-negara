@@ -1,6 +1,6 @@
 #include "SED.h"
 
-SED::SED(double initTime) : initTime(initTime){
+SED::SED(double initTime) : initTime(initTime), totalWaitTime(0) {
     this->schedule = priority_queue<Event,vector<Event>,EventComparator>();
 }
 
@@ -17,6 +17,19 @@ void SED::start(){
 
         schedule.pop();
     }
+
+    //STATISTICS
+    //------------
+    //Real duration --> ici
+    //Queue length (max+avg) --> bank.queue
+    //Client count --> bank.cashiers
+    //Occupation rate --> bank.cashiers
+    //Client avg waitTime --> ???
+
+}
+
+void SED::provideWaitTimeEntry(double wait){
+    totalWaitTime += wait;
 }
 
 double SED::getCurrentTime(){
