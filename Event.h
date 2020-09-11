@@ -16,5 +16,9 @@ class Event {
         double getTime(); 
 }; 
 
+class EventComparator{
+    public:
+        int operator()( Event& e1, Event& e2);
+};
 
 #endif

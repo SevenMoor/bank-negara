@@ -14,7 +14,7 @@ class SED{
         double getCurrentTime(); 
         void start(); 
     protected:
-        priority_queue<Event> schedule;
+        priority_queue<Event,vector<Event>,EventComparator> schedule;
         double initTime; 
         double currentTime;
         Event *event; 
