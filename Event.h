@@ -1,24 +1,20 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "Simulation.h"
+class Simulation;
 
 class Event {
     private : 
         double time;
-
-    protected:
-        Simulation *simulation; 
-
     public :
-        Event(Simulation *simulation, double beginHour = 0): simulation(simulation), time(beginHour){}
+        Event(double beginHour = 0) :  time(beginHour){}
         virtual void process(); 
         double getTime(); 
 }; 
 
 class EventComparator{
     public:
-        int operator()( Event& e1, Event& e2);
+        int operator()( Event* e1, Event* e2);
 };
 
 #endif

@@ -5,8 +5,10 @@
 #include "Simulation.h"
 
 class Arrival : public Event {
+    private:
+        Simulation* simulation;
     public :
-        Arrival(double time, Simulation* simulation) : Event(simulation,time){}
+        Arrival(double time, Simulation* simulation) : Event(time), simulation(simulation){}
         void process();
 }; 
 #endif

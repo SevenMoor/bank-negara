@@ -12,4 +12,4 @@ $(NAME) : $(OBJ)
 all     : $(NAME)
 
 clean   :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(NAME)
