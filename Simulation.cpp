@@ -6,7 +6,7 @@
 
 class Bank; 
 
-Simulation::Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount) : expectedDuration(expectedDuration), expectedServiceTime(expectedServiceTime), interval(interval), cashierCount(cashierCount), SED(), bank(Bank(cashierCount,expectedServiceTime,this)) {
+Simulation::Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount) : expectedDuration(expectedDuration), expectedServiceTime(expectedServiceTime), interval(interval), cashierCount(cashierCount), SED(), bank(&Bank(cashierCount,expectedServiceTime,this)) {
    double firstTime = interval + exp(-1)*exp(random());
    Arrival first = Arrival(firstTime,this);
    this->add(&first);
@@ -21,17 +21,17 @@ double Simulation::getExpectedDuration(){
 }
 
 Bank* Simulation::getBank(){
-    return &bank;
+    return bank;
 }
 
 void Simulation::printResults(){
     cout << "Real duration: " << currentTime << endl;
-    cout << "Queue max length: " << bank.getQueue()->getMaxLength() << endl;
-    cout << "Queue average length: " << bank.getQueue()->getAverageLength() << endl;
+    cout << "Queue max length: " << bank->getQueue()->getMaxLength() << endl;
+    cout << "Queue average length: " << bank->getQueue()->getAverageLength() << endl;
 
-    Cashier* crew = *(bank.getCashiers());
+    Cashier* crew = *(bank->getCashiers());
     int sum = 0;
-    for (int i = 0; i < bank.getCashierCount(); i++){
+    for (int i = 0; i < bank->getCashierCount(); i++){
         sum += crew[i].getClientCount();
         cout << "Cashier " << i << "'s occupation rate: " << crew[i].getOccupationRate() << endl;
     }

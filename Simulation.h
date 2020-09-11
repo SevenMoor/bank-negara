@@ -4,6 +4,8 @@
 #include "SED.h"
 #include "Bank.h"
 
+class Bank;
+
 class Simulation : public SED {
     public :
         Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount);
@@ -16,7 +18,7 @@ class Simulation : public SED {
         double expectedServiceTime;
         double interval;
         int cashierCount;
-        Bank bank;
+        Bank* bank;
 }; 
 
 #endif
