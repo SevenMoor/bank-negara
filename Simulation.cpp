@@ -10,7 +10,7 @@ Simulation::Simulation(double expectedDuration, double expectedServiceTime, doub
    double firstTime = interval + exp(-1)*exp(random());
    Arrival first = Arrival(firstTime,this);
    this->add(&first);
-    *bank = Bank(cashierCount,expectedServiceTime,this);
+    bank = new Bank(cashierCount,expectedServiceTime,this);
 }
 
 double Simulation::getInterval(){
