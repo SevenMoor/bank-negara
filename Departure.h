@@ -1,21 +1,23 @@
-#ifndef DEPARTURE_H
-#define DEPARTURE_H
+#ifndef DEPART_H
+#define DEPART_H
 
 #include "Event.h"
-#include "Cashier.h"
-#include "Client.h"
 
-class Cashier; 
+class Cashier;
+class Client;
+class Simulation;
 
-class Departure : public virtual Event{
+class Departure : public Event
+{
+	private:
+		Simulation *const simulation;
+		Cashier *const cashier;
+		Client *const client;
 
-    public : 
-        Departure(Client client, Cashier *cashier, double time, Simulation *simulation) : client(client), cashier(cashier), Event(time), simulation(simulation){} 
-        void process(); 
-    private :
-        Client client;
-        Cashier *cashier;
-        Simulation* simulation;
+	public:
+        Departure(const Departure&) = delete;
+		Departure(Client *const client, Cashier *const cashier, double time, Simulation *const simulation);
+		void process();
 };
 
 #endif

@@ -1,8 +1,8 @@
 #ifndef Queue_H
 #define Queue_H
 
-#include "Bank.h"
 #include "Client.h"
+#include "Simulation.h"
 #include <iostream> 
 #include <deque> 
   

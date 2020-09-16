@@ -1,11 +1,12 @@
 #include "Event.h"
-#include "Simulation.h"
 
-
-double Event::getTime(){
-    return time;
+Event::Event(double heureDeclechement)
+{
+    time = heureDeclechement;
 }
 
-int EventComparator::operator()( Event* e1, Event* e2) {
-    return e1->getTime() > e2->getTime();
+Event::~Event() {}
+
+double Event::getTime() {
+	return time;
 }

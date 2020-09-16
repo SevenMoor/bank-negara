@@ -1,8 +1,9 @@
 #include "Queue.h"
-
+#include "Bank.h"
 
 Queue::Queue(Bank *bank){
-    this->bank = bank; 
+    this->bank = bank;
+    maxLength = 0;
 }
 
 int Queue::getMaxLength(){

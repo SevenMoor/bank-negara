@@ -1,20 +1,25 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-class Simulation;
 
-class Event {
-    private : 
-        double time;
-    public :
-        Event(double beginHour = 0) :  time(beginHour){}
-        virtual void process() = 0; 
-        double getTime(); 
-}; 
+class SED;
 
-class EventComparator{
-    public:
-        int operator()( Event* e1, Event* e2);
+class Event{
+	protected:
+		double time;
+
+	public:
+		Event(double heureDeclechement);
+		virtual ~Event();
+		double getTime();
+		virtual void process() = 0;
+};
+
+class EventComparator {
+	public:
+	  int operator() ( Event *e1, Event *e2) {
+	    return e1->getTime() > e2->getTime();
+	  }
 };
 
 #endif

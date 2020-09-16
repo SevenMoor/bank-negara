@@ -1,26 +1,23 @@
 #ifndef SED_H
 #define SED_H
 
-#include <iostream> 
-#include <queue> 
+#include <vector>
+#include <queue>
+
 #include "Event.h"
 
-using namespace std;
-
-class Event;
-
 class SED{
-    public :
-        SED(double initTime = 0);
-        void add(Event *event); 
-        double getCurrentTime(); 
-        void start();
-        void provideWaitTimeEntry(double wait); 
-    protected:
-        priority_queue<Event,vector<Event*>,EventComparator> schedule;
-        double initTime; 
-        double currentTime;
-        double totalWaitTime;
-}; 
+	protected:
+		double currentTime;
+		double totalWaitTime;
+		std::priority_queue<Event*, std::vector<Event*>, EventComparator> schedule;
+
+	public:
+		SED();
+		void start();
+		void add(Event *e);
+		double getCurrentTime() const;
+		void provideWaitTimeEntry(double time);
+};
 
 #endif

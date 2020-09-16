@@ -1,5 +1,5 @@
 #include "Bank.h"
-
+#include "Simulation.h"
 
 Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->cashierCount = cashierCount; 
@@ -7,11 +7,8 @@ Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->simulation = simulation; 
     cashiers = new Cashier*[cashierCount]; 
     srand(time(nullptr)); 
-    for(int i=0; i<cashierCount; i++){
-        double random_time = averageServiceTime + std::rand()/((RAND_MAX + 1u)/averageServiceTime); 
-        cashiers[i] = new Cashier(random_time, this); 
-    }
-
+    for(int i=0; i<cashierCount; i++)
+        cashiers[i] = new Cashier(averageServiceTime, this); 
     queue = new Queue(this); 
 }
 

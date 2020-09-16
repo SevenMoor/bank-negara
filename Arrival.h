@@ -1,14 +1,21 @@
 #ifndef ARRIVAL_H
 #define ARRIVAL_H
 
-#include "Event.h"
-#include "Simulation.h"
+#include <random>
 
-class Arrival : public Event {
+#include "Event.h"
+
+class Simulation;
+
+class Arrival : public Event{
     private:
-        Simulation* simulation;
-    public :
-        Arrival(double time, Simulation* simulation) : Event(time), simulation(simulation){}
-        void process();
-}; 
+		Simulation *const simulation;
+        static std::default_random_engine generator;
+
+	public:
+        Arrival(const Arrival&) = delete;
+		Arrival(double time, Simulation *const simulation);
+		void process();
+};
+
 #endif

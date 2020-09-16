@@ -1,28 +1,38 @@
+/**
+* \file SED.cpp
+* \author A. Le Moult
+* \date 10/09/2020
+*/
+
 #include "SED.h"
+#include <iostream>
 
-SED::SED(double initTime) : initTime(initTime), totalWaitTime(0) {
-    this->schedule = priority_queue<Event,vector<Event*>,EventComparator>();
+SED::SED() {
+	currentTime = 0.0;
+	totalWaitTime = 0.0;
 }
 
-void SED::add(Event* e){
-    schedule.push(e);
+void SED::start() {
+	Event *e = nullptr;
+	while (!schedule.empty()) {
+		e = schedule.top();
+		currentTime = e->getTime();
+		schedule.pop();
+
+		e->process();
+
+		delete e;
+	}
 }
 
-void SED::start(){
-    while(!schedule.empty()){
-        Event* e = schedule.top();
-        currentTime = e->getTime();
-
-        e->process();
-
-        schedule.pop();
-    }
+void SED::add(Event *e) {
+	schedule.push(e);
 }
 
-void SED::provideWaitTimeEntry(double wait){
-    totalWaitTime += wait;
+double SED::getCurrentTime() const {
+	return currentTime;
 }
 
-double SED::getCurrentTime(){
-    return currentTime;
+void SED::provideWaitTimeEntry(double time){
+	totalWaitTime += time;
 }

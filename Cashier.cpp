@@ -8,7 +8,8 @@ Cashier::Cashier(){
 Cashier::Cashier(double averageServiceTime, Bank *bank){
     this->bank = bank; 
     this->averageServiceTime = averageServiceTime; 
-    exists = true; 
+    exists = true;
+    clientCount = 0;
 }
 
 double Cashier::getOccupationRate(){
@@ -16,7 +17,7 @@ double Cashier::getOccupationRate(){
     return occupationRate; 
 }
 int Cashier::getClientCount(){
-    return bank->getClientCount(); 
+    return clientCount; 
 }
 double Cashier::getAverageServiceTime(){
     double average = 0; 
@@ -29,10 +30,11 @@ double Cashier::getAverageServiceTime(){
 bool Cashier::isAvailable(){
     return available; 
 }
-void Cashier::serve(Client client){ 
+void Cashier::serve(Client* client){ 
     Departure departure(client, this, bank->getSimulation()->getCurrentTime(), bank->getSimulation()); 
     bank->getSimulation()->add(&departure);  
-    isBusy += averageServiceTime; 
+    isBusy += averageServiceTime;
+    clientCount++;
 }
 void Cashier::free(){
     available = false; 

@@ -3,13 +3,12 @@
 
 #include "Cashier.h"
 #include "Queue.h"
-#include "Simulation.h"
+
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
 
-class Simulation; 
-class Cashier;
+class Simulation;
 class Queue;
 
 using namespace std; 

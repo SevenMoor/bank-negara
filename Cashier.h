@@ -25,7 +25,7 @@ class Cashier{
         int getClientCount();
         double getAverageServiceTime();
         bool isAvailable();
-        void serve(Client client);
+        void serve(Client* client);
         void free();
         bool getExists(); 
 };
