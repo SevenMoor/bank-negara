@@ -1,4 +1,3 @@
-#include <random>
 /*!
     @file Arrival.cpp
     @author Aurélien OTTAVIANO
@@ -13,7 +12,6 @@ Arrival::Arrival(double hour, Simulation *const simulation)
     :Event(hour), simulation(simulation) {}
 
 void Arrival::process() {
-	std::poisson_distribution<int> distri(simulation->getInterval());
 	Client *client = new Client(simulation->getCurrentTime());
 	Cashier* cashier = simulation->getBank()->freeCashier();
 
@@ -22,8 +20,8 @@ void Arrival::process() {
 	else
 		simulation->getBank()->getQueue()->add(*client);
 
-	double heurePrevue = simulation->getCurrentTime() + Poisson::next(simulation->getInterval());
-	if(heurePrevue <= simulation->getExpectedDuration()){
-		simulation->add(new Arrival(heurePrevue, simulation));
+	double departureTime = simulation->getCurrentTime() + Poisson::next(simulation->getInterval());
+	if(departureTime <= simulation->getExpectedDuration()){
+		simulation->add(new Arrival(departureTime, simulation));
 	}
 }

@@ -1,22 +1,14 @@
 /**
- * \class Arrival
+ * @file Arrival.h
+ * @author $Author: Aurélien OTTAVIANO
+ * @date $Date: 10/09/2020
+ * 
+ * @class Arrival
+ * @brief Type of SED event representing a client arriving to the bank. This class is derived from Event. 
  *
- * @brief Arrival is an event that is triggered 
- * when the customer arrives at the bank.
- * The class works with a Poisson distribution as a law of probabilities. 
- *
- * @author $Author: Aurélien OTTAVIANO $
- *
- * @date $Date: 2020/09/20 $
- *
- * Contact: thepsylord88@gmail.com
- *
- * Created on: Wed Sep 9 2020
  */
 #ifndef ARRIVAL_H
 #define ARRIVAL_H
-
-#include <random>
 
 #include "Event.h"
 
@@ -24,26 +16,21 @@ class Simulation;
 
 class Arrival : public Event{
     private:
-		Simulation *const simulation; ///< The current simulation
+		Simulation *const simulation; ///< A constant pointer directing towards the instance of the associated simulation.
 
 	public:
-		/*! @fn Arrival(const Arrival&)
-			@brief ! TODO 
-			@param ! TODO
-		*/
+		//Deleted copy constructor
         Arrival(const Arrival&) = delete;
 
 		/*! @fn Arrival(double time, Simulation *const simulation)
-			@brief Creates a new event : arrival 
-			@param time : The moment when the arrival event is triggered
-			@param simulation : The current state of the simulation
+			@brief Constructs a new instance of arrival.
+			@param time : The expected processing time of the arrival event
+			@param simulation : A pointer towards the associated simulation object
 		*/
 		Arrival(double time, Simulation *const simulation);
 
 		/*! @fn void process()
-			@brief Generates a pseudo-random number using the Poisson distribution. 
-			Creates a new clients and then checks if a cashier can take care of the client. 
-			Finaly, it adds the event to the simulation
+			@brief Override of the virtual process method from Event. It creates a new client, assigns it to a free cashier or if there is none to the queue. It creates a new arrival event according to a poisson distribution to determine when the next client will arrive
 		*/
 		void process();
 };
