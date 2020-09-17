@@ -1,19 +1,14 @@
 /**
+ * 
+ * @file Bank.h
+ *  @author $Author: Mahfoud AMHIYEN
+ * @date $Date: 10/09/2020
+ * 
  * \class Bank
+ * @brief This class simulates a bank, with a fixed number of cashiers and a waiting line. 
  *
- * @brief Bank containing a fixed number of cashiers, and
- * receiving clients who arrive in a pseudo-random way. 
- *
- * This class simulates a bank, with a fixed number of cashiers and arriving customers. 
- *
- * @author $Author: Mahfoud AMHIYEN $
- *
- * @date $Date: 2020/09/20 $
- *
- * Contact: mahfoudamhiyen@gmail.com
- *
- * Created on: Wed Sep 9 2020
  */
+
 #ifndef BANK_H
 #define BANK_H
 
@@ -31,62 +26,54 @@ using namespace std;
 
 class Bank{
     private:
-        int cashierCount; ///< Counts the cashiers
-        int clientCount; ///< Counts the arriving clients
-        Cashier *cashiers; ///< Creates and store a defined number of cashiers
-        Queue *queue; ///< Initializes a queue for the arriving clients
-        double averageServiceTime; ///< Stores the average service time 
-        Simulation *simulation; ///< Initializes the simulation
+        int cashierCount; ///< Quantity of cashiers
+        Cashier *cashiers; ///< An array of the cashiers working at the Bank
+        Queue *queue; ///< A pointer to the waiting line for the bank
+        double averageServiceTime; ///< The average time it takes for a cashier to serve a client 
+        Simulation *simulation; ///< A pointer towards the associated simulation
     public:
         /*! @fn Bank(int cashierCount, double averageServiceTime, Simulation *simulation)
-            @brief Creates an instance of bank
-            @param cashierCount : number of cashier in the bank 
+            @brief Creates an instance of bank.
+            @param cashierCount : Quantity of cashiers to create
             @param averageServiceTime : Average time taken by cashiers to serve customers
-            @param simulation : The state of the simulation 
+            @param simulation : A pointer towards the associated simulation
          */
         Bank(int cashierCount, double averageServiceTime, Simulation *simulation);
 
 
         /*! @fn int getCashierCount()
-            @brief return the number of cashiers in the bank
-            @return the number of cashiers
+            @brief Read accessor for the quantity of cashiers.
+            @return Number of cashiers working at the bank
          */
         int getCashierCount();
 
 
-        /*! @fn int getClientCount()
-            @brief return the number of clients, as the max length of the queue
-            @return the total number of clients
-         */
-        int getClientCount();
-
-
-        /*! @fn Cashier* freeCashier()
+        /*! @fn Cashier * freeCashier()
             @brief Browses the cashiers array and checks if there is a free 
             cashier and returns it. Otherwise, it returns a "fake" cashier.    
-            @return a cashier if available 
+            @return An instance of cashier, either free or fake to avoid memory errors. 
          */
         Cashier* freeCashier();
 
 
         /*! 
-            @fn Queue *getQueue()
-            @brief gets the state of the queue and returns it
-            @return the state of the queue
+            @fn Queue * getQueue()
+            @brief Read accessor for the pointer to the waiting line of the bank.
+            @return A pointer to the waiting line
          */
         Queue *getQueue();
 
 
-        /*! @fn Cashier *getCashiers()
-            @brief Returns the cashiers array
-            @return all cashiers
+        /*! @fn Cashier * getCashiers()
+            @brief Read accessor for the cashier array.
+            @return The cashier array of the bank
          */ 
         Cashier *getCashiers();
 
 
-        /*! @fn Simulation *getSimulation()
-            @brief gets the current state of the simulation and returns it
-            @return the current state of the simulation
+        /*! @fn Simulation * getSimulation()
+            @brief Read accessor for the pointer towards the associated simulation.
+            @return A pointer to the associated simulation
          */
         Simulation *getSimulation(); 
 };

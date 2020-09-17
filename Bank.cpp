@@ -21,10 +21,6 @@ int Bank::getCashierCount(){
     return cashierCount; 
 }
 
-int Bank::getClientCount(){
-    return queue->getMaxLength(); 
-}
-
 Cashier* Bank::freeCashier(){
     for(int i=0; i<cashierCount; i++){
         if(cashiers[i].isAvailable()) return &cashiers[i]; 
