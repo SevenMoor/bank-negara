@@ -5,10 +5,10 @@ Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->cashierCount = cashierCount; 
     this->averageServiceTime = averageServiceTime; 
     this->simulation = simulation; 
-    cashiers = new Cashier*[cashierCount]; 
+    cashiers = new Cashier[cashierCount]; 
     srand(time(nullptr)); 
     for(int i=0; i<cashierCount; i++)
-        cashiers[i] = new Cashier(averageServiceTime, this); 
+        cashiers[i] =  Cashier(averageServiceTime, this); 
     queue = new Queue(this); 
 }
 
@@ -20,18 +20,18 @@ int Bank::getClientCount(){
     return queue->getMaxLength(); 
 }
 
-Cashier Bank::freeCashier(){
+Cashier* Bank::freeCashier(){
     for(int i=0; i<cashierCount; i++){
-        if(cashiers[i]->isAvailable()) return *cashiers[i]; 
+        if(cashiers[i].isAvailable()) return &cashiers[i]; 
     }
-    return Cashier(); 
+    return new Cashier(); 
 }
 
 Queue *Bank::getQueue(){
     return queue; 
 }
 
-Cashier **Bank::getCashiers(){
+Cashier *Bank::getCashiers(){
     return cashiers; 
 }
 

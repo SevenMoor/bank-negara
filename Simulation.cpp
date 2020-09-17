@@ -6,8 +6,7 @@
 #include <math.h>
 
 Simulation::Simulation(double expectedDuration, double expectedServiceTime, double interval, int cashierCount) : SED(), expectedDuration(expectedDuration), expectedServiceTime(expectedServiceTime), interval(interval), cashierCount(cashierCount) {
-   double firstTime = interval;
-   Arrival* first = new Arrival(firstTime,this);
+   Arrival* first = new Arrival(0.0,this);
    this->add(first);
     bank = new Bank(cashierCount,expectedServiceTime,this);
 }
@@ -29,12 +28,12 @@ void Simulation::printResults(){
     cout << "Queue max length: " << bank->getQueue()->getMaxLength() << endl;
     cout << "Queue average length: " << bank->getQueue()->getAverageLength() << endl;
 
-    Cashier** crew = bank->getCashiers();
+    Cashier* crew = bank->getCashiers();
     int sum = 0;
     for (int i = 0; i < bank->getCashierCount(); i++){
-        if(crew[i]->getExists()){
-             sum += crew[i]->getClientCount();
-            cout << "Cashier " << i << "'s occupation rate: " << crew[i]->getOccupationRate() << endl;
+        if(crew[i].getExists()){
+             sum += crew[i].getClientCount();
+            cout << "Cashier " << i << "'s occupation rate: " << crew[i].getOccupationRate() << endl;
         }
     }
     cout << "Client count: " << sum << endl;

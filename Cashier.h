@@ -23,6 +23,10 @@
 #include "Arrival.h"
 #include "Bank.h"
 
+#include <random>
+
+using namespace std;
+
 class Bank; 
 
 class Cashier{
@@ -35,6 +39,7 @@ class Cashier{
         Bank *bank; ///< Sotres the bank where the cashier is working
         bool exists; ///< Verifies if the cashier exists
         double isBusy; ///< Stores the time when the cashiers is serving clients
+        static default_random_engine generator;
     public:
         /// Default constructor 
         Cashier();

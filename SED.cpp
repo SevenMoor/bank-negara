@@ -18,7 +18,6 @@ void SED::start() {
 		e = schedule.top();
 		currentTime = e->getTime();
 		schedule.pop();
-
 		e->process();
 
 		delete e;

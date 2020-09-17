@@ -4,6 +4,7 @@
 Queue::Queue(Bank *bank){
     this->bank = bank;
     maxLength = 0;
+    averageLength = 0.0;
 }
 
 int Queue::getMaxLength(){
@@ -19,8 +20,9 @@ bool Queue::isEmpty(){
 }
 
 void Queue::add(Client client){
-    maxLength++; 
     clients.push_back(client); 
+    if(maxLength< (int) clients.size())
+        maxLength++;
 }
 
 Client Queue::pop(){

@@ -9,7 +9,7 @@ class Event{
 		double time;
 
 	public:
-		Event(double heureDeclechement);
+		Event(double hour);
 		virtual ~Event();
 		double getTime();
 		virtual void process() = 0;

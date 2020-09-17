@@ -33,7 +33,7 @@ class Bank{
     private:
         int cashierCount; ///< Counts the cashiers
         int clientCount; ///< Counts the arriving clients
-        Cashier **cashiers; ///< Creates and store a defined number of cashiers
+        Cashier *cashiers; ///< Creates and store a defined number of cashiers
         Queue *queue; ///< Initializes a queue for the arriving clients
         double averageServiceTime; ///< Stores the average service time 
         Simulation *simulation; ///< Initializes the simulation
@@ -51,7 +51,7 @@ class Bank{
         /** 
          * @return a cashier if available 
          */
-        Cashier freeCashier();
+        Cashier* freeCashier();
         /** 
          * @return the state of the queue
          */
@@ -59,7 +59,7 @@ class Bank{
         /** 
          * @return all cashiers
          */ 
-        Cashier **getCashiers(); 
+        Cashier *getCashiers(); 
         /** 
          * @return the actual state of the simulation
          */

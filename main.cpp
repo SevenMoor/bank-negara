@@ -6,7 +6,7 @@
 
 int main(){
 
-    Simulation simulation(40,2,5,3);
+    Simulation simulation(40,5,2,2);
     simulation.start();
     simulation.printResults();
 

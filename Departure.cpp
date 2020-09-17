@@ -10,10 +10,12 @@ void Departure::process() {
 
 	if (!queue->isEmpty()){
 		next = queue->pop();
+		double waitTime = simulation->getCurrentTime()-next.getArrivalTime();
+		simulation->provideWaitTimeEntry(waitTime);
 		cashier->serve(&next);
 	}
 	else
 		cashier->free();
 
-	delete client;
+	//delete client;
 }

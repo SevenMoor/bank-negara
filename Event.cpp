@@ -1,8 +1,8 @@
 #include "Event.h"
 
-Event::Event(double heureDeclechement)
+Event::Event(double hour)
 {
-    time = heureDeclechement;
+    this->time = hour;
 }
 
 Event::~Event() {}
