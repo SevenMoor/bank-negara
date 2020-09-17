@@ -1,3 +1,9 @@
+/*!
+    @file Simulation.cpp
+    @author Aurélien OTTAVIANO
+    @date 10/09/2020
+*/
+
 #include "Simulation.h"
 #include "Arrival.h"
 #include "Bank.h"

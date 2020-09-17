@@ -1,7 +1,7 @@
-/**
-* \file SED.cpp
-* \author A. Le Moult
-* \date 10/09/2020
+/*!
+    @file SED.cpp
+    @author Aurélien OTTAVIANO
+    @date 10/09/2020
 */
 
 #include "SED.h"

@@ -1,3 +1,8 @@
+/*!
+    @file Queue.cpp
+    @author Mahfoud AMHIYEN
+    @date 10/09/2020
+*/
 #include "Queue.h"
 #include "Bank.h"
 

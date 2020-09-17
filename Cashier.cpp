@@ -1,3 +1,8 @@
+/*!
+    @file Cashier.cpp
+    @author Mahfoud AMHIYEN
+    @date 10/09/2020
+*/
 #include "Cashier.h"
 
 default_random_engine Cashier::generator;

@@ -38,30 +38,55 @@ class Bank{
         double averageServiceTime; ///< Stores the average service time 
         Simulation *simulation; ///< Initializes the simulation
     public:
-        /// Creates a bank instance
+        /*! @fn Bank(int cashierCount, double averageServiceTime, Simulation *simulation)
+            @brief Creates an instance of bank
+            @param cashierCount : number of cashier in the bank 
+            @param averageServiceTime : Average time taken by cashiers to serve customers
+            @param simulation : The state of the simulation 
+         */
         Bank(int cashierCount, double averageServiceTime, Simulation *simulation);
-        /** 
-         * @return the number of cashiers
+
+
+        /*! @fn int getCashierCount()
+            @brief return the number of cashiers in the bank
+            @return the number of cashiers
          */
         int getCashierCount();
-        /** 
-         * @return the total number of clients
+
+
+        /*! @fn int getClientCount()
+            @brief return the number of clients, as the max length of the queue
+            @return the total number of clients
          */
         int getClientCount();
-        /** 
-         * @return a cashier if available 
+
+
+        /*! @fn Cashier* freeCashier()
+            @brief Browses the cashiers array and checks if there is a free 
+            cashier and returns it. Otherwise, it returns a "fake" cashier.    
+            @return a cashier if available 
          */
         Cashier* freeCashier();
-        /** 
-         * @return the state of the queue
+
+
+        /*! 
+            @fn Queue *getQueue()
+            @brief gets the state of the queue and returns it
+            @return the state of the queue
          */
         Queue *getQueue();
-        /** 
-         * @return all cashiers
+
+
+        /*! @fn Cashier *getCashiers()
+            @brief Returns the cashiers array
+            @return all cashiers
          */ 
-        Cashier *getCashiers(); 
-        /** 
-         * @return the actual state of the simulation
+        Cashier *getCashiers();
+
+
+        /*! @fn Simulation *getSimulation()
+            @brief gets the current state of the simulation and returns it
+            @return the current state of the simulation
          */
         Simulation *getSimulation(); 
 };

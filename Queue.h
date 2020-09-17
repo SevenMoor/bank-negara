@@ -38,26 +38,45 @@ class Queue{
         ///< The bank where the clients are queuing
         Bank *bank;
     public :
-        /// Constructs the queue
+        /*! @fn Queue(Bank *bank)
+            @brief Constructor Queue
+            @param Bank where the clients are queueing
+        */
         Queue(Bank *bank);
-        /** 
-         * @return the max length, we increment the variable when adding a client to the queue
+
+
+        /*!
+            @fn int getMaxLength()
+            @brief Increment the variable maxLength when adding a new client to the queue
+            @return the queue max length
          */
         int getMaxLength();
-        /** 
-         * @return the average legnth computed as the max length divided by the simulation duration
+
+
+        /*! @fn double getAverageLength()
+            @brief Compute the average length as the max length divided by the simulation duration
+            @return the average length
          */
         double getAverageLength();
-        /** 
-         * @return true if the queue is empty, else false
+
+
+        /*! @fn bool isEmpty()
+            @brief Verifies if the queue is empty or not 
+            @return true if the queue is empty, else false
          */
         bool isEmpty();
-        /** 
-         * Adds a new client at the end of the
+
+
+        /*! @fn void add(Client) 
+            @brief Adds a new client at the end of the end of the queue
+            @param The client to be added
          */
         void add(Client client);
-        /** 
-         * Removes the first client in the queue and return it
+
+        
+        /*! @fn Client pop()
+            @brief Removes the first client in the queue
+            @return the first client in the queue
          */
         Client pop();
 };

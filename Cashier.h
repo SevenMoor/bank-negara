@@ -41,39 +41,67 @@ class Cashier{
         double isBusy; ///< Stores the time when the cashiers is serving clients
         static default_random_engine generator;
     public:
-        /// Default constructor 
+        /*! @fn Cashier() 
+            @brief Default constructor : Creates a "fake" cashier
+        */  
         Cashier();
-        /// Creates a cashier working in a bank with an average service time
+
+
+        /*! @fn Cashier(double averageServiceTime, Bank *bank)
+            @brief Creates a cashier working in a bank with an average service time
+            @param averageServiceTime : The average time it takes to serve a customer
+            @param bank : The bank where he is working 
+        */ 
         Cashier(double averageServiceTime, Bank *bank);
-        /** 
-         * @return the occupation rate computed as current total work 
-         * time divided by the simulation duration
+
+
+        /*! @fn double getOccupationRate()
+            @brief Computes the occupation rate as the current total work 
+            time divided by the simulation duration
+            @return the occupation rate 
          */
         double getOccupationRate();
-        /** 
-         * @return the number of clients
+
+
+        /*! @fn int getClientCount()
+            @brief Returns the number of clients which is incremented every time a client is served
+            @return the number of clients
          */
         int getClientCount();
-        /** 
-         * @return the average service time
+
+
+        /*! @fn double getAverageServiceTime()
+            @brief Returns the average service time
+            @return the average service time
          */
         double getAverageServiceTime();
-        /** 
-         * @return true if the cashier is available, else false
+
+
+        /*! @fn bool isAvailable 
+            @brief Return if the cashier is available or not
+            @return true if the cashier is available, else false
          */
         bool isAvailable();
-        /** 
-         * Serves a specific client, by creating an event "Departure" and 
-         * adding it to the simulation, before cumulating the work time and 
-         * count the number of clients
+
+
+        /*! @fn void serve(Client *client)
+            @brief Serves a specific client, by creating an event "Departure" and 
+            adding it to the simulation, before cumulating the work time and count the number of clients
+            @param client : The first client in client  
          */
         void serve(Client* client);
-        /** 
-         * Frees a cashier after serving a client, by setting available to true
+
+
+        /*! @fn void free()
+
+            @brief Frees a cashier after serving a client, by setting available to true
          */
         void free();
-        /** 
-         * @return if a cashier exists 
+
+
+        /*! @fn bool getExists()
+            @brief Returns if a cashier is a fake/exists or not
+            @return if true a cashier exists 
          */
         bool getExists(); 
 };

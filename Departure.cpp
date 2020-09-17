@@ -1,3 +1,8 @@
+/*!
+    @file Departure.cpp
+    @author Aurélien OTTAVIANO
+    @date 10/09/2020
+*/
 #include "Departure.h"
 #include "Event.h"
 #include "Simulation.h"

@@ -1,5 +1,9 @@
 #include <random>
-
+/*!
+    @file Arrival.cpp
+    @author Aurélien OTTAVIANO
+    @date 10/09/2020
+*/
 #include "Arrival.h"
 #include "Event.h"
 #include "Simulation.h"

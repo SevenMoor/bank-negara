@@ -1,3 +1,8 @@
+/*!
+    @file Bank.cpp
+    @author Mahfoud AMHIYEN
+    @date 10/09/2020
+*/
 #include "Bank.h"
 #include "Simulation.h"
 

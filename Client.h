@@ -1,7 +1,7 @@
 /**
  * \class Client
  *
- * @brief A client arrives, if a cashier is free, he takes 
+ * @brief Client arrives, if a cashier is free, he takes 
  * care of the client, otherwise the client takes place in a queue
  *
  * It is assumed that the client is honest and patient, does not
@@ -21,12 +21,22 @@
 
 class Client {
     public:
-        /// Default constructor
+        /*! @fn Client
+            @brief Default constructor
+         */
         Client(); 
-        /// Creates a client with an arrival time
+
+
+        /*! @fn Client(double arrivalTime)
+            @brief Creates a client with an arrival time
+            @param arrivalTime : the moment when the client arrives in the bank
+        */
         Client(double arrivalTime);
-        /** 
-         * @return the arrival time
+
+        
+        /*! @fn double getArrivalTime()
+            @brief return the client arrival time
+            @return the arrival time
          */
         double getArrivalTime(); 
     private :
