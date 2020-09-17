@@ -4,8 +4,7 @@
     @date 10/09/2020
 */
 #include "Cashier.h"
-
-default_random_engine Cashier::generator;
+#include "Poisson.h"
 
 Cashier::Cashier(){
     exists = false; 
@@ -38,11 +37,11 @@ double Cashier::getAverageServiceTime(){
 bool Cashier::isAvailable(){
     return available; 
 }
-void Cashier::serve(Client* client){ 
-    std::poisson_distribution<int> distri(averageServiceTime);
-    double departureTime = bank->getSimulation()->getCurrentTime()+averageServiceTime;
+void Cashier::serve(Client* client){
+    double rand = Poisson::next(averageServiceTime);
+    double departureTime = bank->getSimulation()->getCurrentTime()+rand;
     bank->getSimulation()->add(new Departure(client, this, departureTime, bank->getSimulation()));  
-    isBusy += averageServiceTime;
+    isBusy += rand;
     clientCount++;
     available = false;
 }

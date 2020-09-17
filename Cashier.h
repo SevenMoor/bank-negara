@@ -39,7 +39,6 @@ class Cashier{
         Bank *bank; ///< Sotres the bank where the cashier is working
         bool exists; ///< Verifies if the cashier exists
         double isBusy; ///< Stores the time when the cashiers is serving clients
-        static default_random_engine generator;
     public:
         /*! @fn Cashier() 
             @brief Default constructor : Creates a "fake" cashier

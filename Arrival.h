@@ -25,7 +25,6 @@ class Simulation;
 class Arrival : public Event{
     private:
 		Simulation *const simulation; ///< The current simulation
-        static std::default_random_engine generator; ///< Random number engine : generates pseudo-random numbers
 
 	public:
 		/*! @fn Arrival(const Arrival&)

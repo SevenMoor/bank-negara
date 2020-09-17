@@ -7,8 +7,7 @@
 #include "Arrival.h"
 #include "Event.h"
 #include "Simulation.h"
-
-std::default_random_engine Arrival::generator;
+#include "Poisson.h"
 
 Arrival::Arrival(double hour, Simulation *const simulation) 
     :Event(hour), simulation(simulation) {}
@@ -23,7 +22,7 @@ void Arrival::process() {
 	else
 		simulation->getBank()->getQueue()->add(*client);
 
-	double heurePrevue = simulation->getCurrentTime() + simulation->getInterval();
+	double heurePrevue = simulation->getCurrentTime() + Poisson::next(simulation->getInterval());
 	if(heurePrevue <= simulation->getExpectedDuration()){
 		simulation->add(new Arrival(heurePrevue, simulation));
 	}
