@@ -3,9 +3,6 @@
  * @file Cashier.h
  * @author Mahfoud AMHIYEN
  * @date 10/09/2020
- * 
- * @class Cashier
- * @brief Class representing the workers of the Bank. 
  *
  */
 #ifndef CASHIER_H
@@ -22,6 +19,13 @@ using namespace std;
 
 class Bank; 
 
+
+/**
+ * 
+ * @class Cashier
+ * @brief Class representing the workers of the Bank. 
+ * 
+ */
 class Cashier{
     private:
         double occupationRate; ///< The ratio of active time over total simulated time

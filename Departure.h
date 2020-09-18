@@ -4,10 +4,6 @@
  * @author Aurélien OTTAVIANO
  * @date 10/09/2020
  * 
- * \class Departure
- *
- * @brief A type of SED event simulating the end of service for a given client. This class is derived from Event.
- * 
  */
 #ifndef DEPART_H
 #define DEPART_H
@@ -18,6 +14,13 @@ class Cashier;
 class Client;
 class Simulation;
 
+
+/**
+ * 
+ * \class Departure
+ * @brief A type of SED event simulating the end of service for a given client. This class is derived from Event.
+ *
+ */
 class Departure : public Event
 {
 	private:

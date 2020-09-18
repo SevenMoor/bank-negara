@@ -14,6 +14,13 @@
 
 class SED;
 
+
+/**
+ * 
+ * @class Event
+ * @brief A representation of an event in the SED, with a scheduled triggering time. It is an abstract class. 
+ * 
+ */
 class Event{
 	protected:
 		double time;///< The scheduled triggering time of the event

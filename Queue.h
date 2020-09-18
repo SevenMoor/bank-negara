@@ -3,14 +3,6 @@
  * @file Queue.h
  * @author Mahfoud AMHIYEN
  * @date 10/09/2020
- * 
- * \class Queue
- *
- * @brief A representation of the waiting line in a given bank
- * 
- *  Queue is a container, designed to operate in a FIFO context 
- * (first-in first-out), where clients are inserted into one end of 
- * the container and extracted from the other.
  *
  */
 #ifndef Queue_H
@@ -25,6 +17,17 @@ using namespace std;
 
 class Bank; 
 
+
+/**
+ * 
+ * \class Queue
+ * @brief A representation of the waiting line in a given bank
+ * 
+ *  Queue is a container, designed to operate in a FIFO context 
+ * (first-in first-out), where clients are inserted into one end of 
+ * the container and extracted from the other. 
+ * 
+ */
 class Queue{
     private :
         deque<Client> clients; ///< std::deque used to contain the FIFO

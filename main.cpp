@@ -1,6 +1,10 @@
 /**
  * @mainpage Index of documentation
  * 
+ * This documentation aims to provide insights into the code structure of this bank simulation project.
+ * 
+ * This project is part of the C++ workshop in the Info-appliances class for the Professional master of computer science at CYU.
+ * It has been created by Aurélien OTTAVIANO and Mahfoud Amhiyen under the supervision of Philippe Laroque.
  * 
 */
 

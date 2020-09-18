@@ -4,11 +4,6 @@
  * @author Aurélien OTTAVIANO
  * @date 10/09/2020
  * 
- * @class SED
- * @brief An event management system for the simulation
- * 
- * It uses a priority_queue to register events, and order them according to the time of the event in ascending order. Chosen events are then processed.
- * 
  */ 
 
 #ifndef SED_H
@@ -21,6 +16,15 @@
 
 using namespace std;
 
+
+/**
+ * 
+ * @class SED
+ * @brief An event management system for the simulation
+ * 
+ * It uses a priority_queue to register events, and order them according to the time of the event in ascending order. Chosen events are then processed. 
+ * 
+ */
 class SED{
 	protected:
 		double currentTime; ///< The current time in the simulation

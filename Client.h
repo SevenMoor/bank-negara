@@ -4,13 +4,17 @@
  * @author Mahfoud AMHIYEN
  * @date 10/09/2020
  * 
- * \class Client
- * @brief A representation of clients arriving to the bank.
- * 
  */
 #ifndef CLIENT_H
 #define CLIENT_H
 
+
+/**
+ * 
+ *  \class Client
+ * @brief A representation of clients arriving to the bank. 
+ * 
+ */
 class Client {
     public:
         /*! @fn Client

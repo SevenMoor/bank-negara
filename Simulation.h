@@ -4,9 +4,6 @@
  * @author Aurélien OTTAVIANO
  * @date 10/09/2020
  * 
- * @class Simulation
- * @brief A representation of the simulation to run.
- * 
  */
 
 #ifndef SIMULATION_H
@@ -17,6 +14,13 @@
 
 class Bank;
 
+
+/**
+ * 
+ * @class Simulation
+ * @brief A representation of the simulation to run.
+ * 
+ */
 class Simulation : public SED {
      private : 
         double expectedDuration;///< Duration during which new Arrival events are accepted

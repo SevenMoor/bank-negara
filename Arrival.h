@@ -2,9 +2,6 @@
  * @file Arrival.h
  * @author Aurélien OTTAVIANO
  * @date 10/09/2020
- * 
- * @class Arrival
- * @brief Type of SED event representing a client arriving to the bank. This class is derived from Event. 
  *
  */
 #ifndef ARRIVAL_H
@@ -14,6 +11,13 @@
 
 class Simulation;
 
+
+/**
+ * 
+ * @class Arrival
+ * @brief Type of SED event representing a client arriving to the bank. This class is derived from Event. 
+ * 
+ */
 class Arrival : public Event{
     private:
 		Simulation *const simulation; ///< A constant pointer directing towards the instance of the associated simulation.

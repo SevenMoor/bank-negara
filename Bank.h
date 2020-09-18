@@ -4,8 +4,6 @@
  *  @author Mahfoud AMHIYEN
  * @date 10/09/2020
  * 
- * \class Bank
- * @brief This class simulates a bank, with a fixed number of cashiers and a waiting line. 
  *
  */
 
@@ -24,6 +22,12 @@ class Queue;
 
 using namespace std; 
 
+/**
+ * 
+ *  \class Bank
+ * @brief This class simulates a bank, with a fixed number of cashiers and a waiting line. 
+ * 
+ */
 class Bank{
     private:
         int cashierCount; ///< Quantity of cashiers
