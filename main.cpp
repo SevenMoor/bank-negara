@@ -41,19 +41,19 @@ int main(int argc, char **argv){
         switch (opt){
             case 'n' : 
                 nc = stoi(optarg);
-                cout << "Number of cashiers set to: " << nc << std::endl;
+                cout << "Number of cashiers set to: " << nc << endl;
                 break;
             case 's' : 
                 st = stod(optarg);
-                cout << "Average service time set to: " << st << std::endl;
+                cout << "Average service time set to: " << st << endl;
                 break;
             case 't' :
                 tm = stod(optarg);
-                cout << "Average arrival time set to: " << tm << std::endl;
+                cout << "Average arrival time set to: " << tm << endl;
                 break;
             case 'd' :
                 dp = stoi(optarg);
-                cout << "Expected simulation duration set to: " << dp << std::endl;
+                cout << "Expected simulation duration set to: " << dp << endl;
                 break;
             case 'h' :
             case '?' :
@@ -63,13 +63,13 @@ int main(int argc, char **argv){
         }
     }
     
-    cout << "\n ------- Begin Simulation -------" << endl; 
+    cout << "\n------- Begin Simulation -------" << endl; 
     
     Poisson::init();
     Simulation simulation(dp, st, tm, nc);
     simulation.start();
     simulation.printResults();
 
-    cout << "\n ------- End Simulation ------- \n" << endl; 
+    cout << "\n ------- End Simulation -------" << endl; 
     return 0;
 }
