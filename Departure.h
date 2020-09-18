@@ -1,16 +1,13 @@
 /**
+ * 
+ * @file Departure.h
+ * @author Aurélien OTTAVIANO
+ * @date 10/09/2020
+ * 
  * \class Departure
  *
- * @brief Departure is an event that is triggered 
- * when the cashier finished serving the client and the client leaves the bank.
- *
- * @author $Author: Aurélien OTTAVIANO $
- *
- * @date $Date: 2020/09/20 $
- *
- * Contact: thepsylord88@gmail.com
- *
- * Created on: Wed Sep 9 2020
+ * @brief A type of SED event simulating the end of service for a given client. This class is derived from Event.
+ * 
  */
 #ifndef DEPART_H
 #define DEPART_H
@@ -24,29 +21,27 @@ class Simulation;
 class Departure : public Event
 {
 	private:
-		Simulation *const simulation; ///< The current state of the simulation
-		Cashier *const cashier; ///< The cashier serving the client
-		Client *const client; ///< The client getting served
+		Simulation *const simulation; ///< A pointer to the associated simulation
+		Cashier *const cashier; ///< A pointer to the cashier that finished serving the clien
+		Client *const client; ///< A pointer to the client
 
 	public:
-		/*! @fn Departure(const Departure&)
-			@brief ! TODO
-			@param ! TODO 
-		*/
         Departure(const Departure&) = delete;
 
 		/*! @fn Departure(Client *const client, Cashier *const cashier, double time, Simulation *const simulation)
-			@brief Creates a new event Departure
-			@param client : The client getting served and going to leave the bank
+			@brief Constructor for a new Departure instance
+			@param client : The client that finished being served
 			@param cashier : The cashier serving the client
-			@param time : The departure time, when the event is triggered
-			@param simulation : The current state of the simulation
+			@param time : The triggering time of the departure
+			@param simulation : A pointer to the associated simulation
 		*/
 		Departure(Client *const client, Cashier *const cashier, double time, Simulation *const simulation);
 
 		/*! @fn void process()
-			@brief Checks if the queue is empty. If so, it is freeing the cashier. 
-			Otherwise, it gets the fist client in the queue, and asks a cashier to serve him. 
+			@brief Override of the virtual process method from Event.
+			
+			It checks if the queue is empty, if it's not, a waiting client is assigned to the cashier,
+			Otherwise the cashier is freed.
 		 */
 		void process();
 };
