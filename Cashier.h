@@ -1,19 +1,12 @@
 /**
- * \class Cashier
+ * 
+ * @file Cashier.h
+ * @author Mahfoud AMHIYEN
+ * @date 10/09/2020
+ * 
+ * @class Cashier
+ * @brief Class representing the workers of the Bank. 
  *
- * @brief Cashier works in the bank and has a fixed average service time. 
- *
- * He serves clients, one by one. It is assumed that cashiers are never tired, 
- * at the end of a customer's treatment, the cashier takes one more if the 
- * line is not empty.
- *
- * @author $Author: Mahfoud AMHIYEN $
- *
- * @date $Date: 2020/09/20 $
- *
- * Contact: mahfoudamhiyen@gmail.com
- *
- * Created on: Wed Sep 9 2020
  */
 #ifndef CASHIER_H
 #define CASHIER_H
@@ -31,54 +24,52 @@ class Bank;
 
 class Cashier{
     private:
-        double occupationRate; ///< Stores the occupation rate
-        int clientCount; ///< Stores the number of client
-        double averageServiceTime; ///< Stores the average service time
-        bool available; ///< Shows if the cashier is free or not. 
-        Client client; ///< Stores the client to be served
-        Bank *bank; ///< Sotres the bank where the cashier is working
-        bool exists; ///< Verifies if the cashier exists
-        double isBusy; ///< Stores the time when the cashiers is serving clients
+        double occupationRate; ///< The ratio of active time over total simulated time
+        int clientCount; ///< Number of clients already served
+        double averageServiceTime; ///< Average time needed to serve a client
+        bool available; ///< Stores true when the cashier is not serving any client, else false
+        Bank *bank; ///< Pointer towards the bank where the cashier works
+        bool exists; ///< Stores true if the cashier works at the bank, and false if it was created to avoid memory errors
+        double isBusy; ///< Contains the active time of the cashier. It is used to calculate the occupation rate
     public:
         /*! @fn Cashier() 
-            @brief Default constructor : Creates a "fake" cashier
+            @brief Default constructor : Creates a fake cashier to avoid memory issues.
         */  
         Cashier();
 
 
         /*! @fn Cashier(double averageServiceTime, Bank *bank)
-            @brief Creates a cashier working in a bank with an average service time
-            @param averageServiceTime : The average time it takes to serve a customer
-            @param bank : The bank where he is working 
+            @brief Creates a new instance of Cashier.
+            @param averageServiceTime The average time it takes to serve a customer
+            @param bank  A pointer to the bank where the cashier works
         */ 
         Cashier(double averageServiceTime, Bank *bank);
 
 
         /*! @fn double getOccupationRate()
-            @brief Computes the occupation rate as the current total work 
-            time divided by the simulation duration
-            @return the occupation rate 
+            @brief Computes the occupation as the time spent serving clients over the current ellapsed time.
+            @return The occupation rate 
          */
         double getOccupationRate();
 
 
         /*! @fn int getClientCount()
-            @brief Returns the number of clients which is incremented every time a client is served
-            @return the number of clients
+            @brief Read accessor for the number of clients served.
+            @return The number of clients served
          */
         int getClientCount();
 
 
         /*! @fn double getAverageServiceTime()
-            @brief Returns the average service time
-            @return the average service time
+            @brief Read accessor for the average service time.
+            @return The average service time
          */
         double getAverageServiceTime();
 
 
-        /*! @fn bool isAvailable 
-            @brief Return if the cashier is available or not
-            @return true if the cashier is available, else false
+        /*! @fn bool isAvailable()
+            @brief Read accessor for the available attribute.
+            @return The available attribute
          */
         bool isAvailable();
 
@@ -92,15 +83,14 @@ class Cashier{
 
 
         /*! @fn void free()
-
-            @brief Frees a cashier after serving a client, by setting available to true
+            @brief Frees a cashier after serving a client.
          */
         void free();
 
 
         /*! @fn bool getExists()
-            @brief Returns if a cashier is a fake/exists or not
-            @return if true a cashier exists 
+            @brief Read accessor for the existence of a cashier in a bank (whether it is fake or not).
+            @return The value of the exists attribute 
          */
         bool getExists(); 
 };

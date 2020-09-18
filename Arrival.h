@@ -1,7 +1,7 @@
 /**
  * @file Arrival.h
- * @author $Author: Aurélien OTTAVIANO
- * @date $Date: 10/09/2020
+ * @author Aurélien OTTAVIANO
+ * @date 10/09/2020
  * 
  * @class Arrival
  * @brief Type of SED event representing a client arriving to the bank. This class is derived from Event. 
@@ -30,7 +30,11 @@ class Arrival : public Event{
 		Arrival(double time, Simulation *const simulation);
 
 		/*! @fn void process()
-			@brief Override of the virtual process method from Event. It creates a new client, assigns it to a free cashier or if there is none to the queue. It creates a new arrival event according to a poisson distribution to determine when the next client will arrive
+			@brief Override of the virtual process method from Event. 
+			
+			It creates a new client, assigns it to a free cashier or if there is none to the queue. 
+			It creates a new arrival event according to a poisson distribution to determine when
+			the next client will arrive.
 		*/
 		void process();
 };

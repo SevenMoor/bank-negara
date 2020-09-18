@@ -1,8 +1,8 @@
 /**
  * 
  * @file Bank.h
- *  @author $Author: Mahfoud AMHIYEN
- * @date $Date: 10/09/2020
+ *  @author Mahfoud AMHIYEN
+ * @date 10/09/2020
  * 
  * \class Bank
  * @brief This class simulates a bank, with a fixed number of cashiers and a waiting line. 
