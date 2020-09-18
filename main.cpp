@@ -6,7 +6,6 @@
 
 #include <getopt.h>
 #include <iostream>
-#include <string>
 
 
 using namespace std;
@@ -37,7 +36,7 @@ int main(int argc, char **argv){
         const auto opt = getopt_long(argc, argv, short_opts, long_opts, nullptr);
 
         if (opt < 0)
-           printHelp(); 
+           break; 
            
         switch (opt){
             case 'n' : 
@@ -59,7 +58,7 @@ int main(int argc, char **argv){
             case 'h' :
             case '?' :
             default :
-                printHelp();
+                printHelp();    
                 break;
         }
     }
