@@ -1,3 +1,9 @@
+/**
+ * @mainpage Index of documentation
+ * 
+ * 
+*/
+
 #include "Simulation.h"
 #include "Bank.h"
 

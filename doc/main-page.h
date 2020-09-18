@@ -1,5 +1,0 @@
-/**
- * @mainpage Index of documentation
- * 
- * 
-*/
