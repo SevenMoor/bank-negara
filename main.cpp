@@ -16,12 +16,13 @@
 
 #include <getopt.h>
 #include <iostream>
-
+#include <string>
 
 using namespace std;
 
 void printHelp(){
-    cout << 
+    cout << "Some arguments are missing, please make sure you've entered all the arguments \n"
+        "\t----- Arguments : -----\n\n"
         "-n <n> : Set number of cashiers \n"
         "-d <n> : Set the expected simulation duration \n"
         "-s <val> : Set average service time \n"
@@ -41,6 +42,10 @@ int main(int argc, char **argv){
             {"tm", required_argument, nullptr, 't'},
             {"help", no_argument, nullptr, 'h'}
     };
+
+    if(argc < 8){
+        printHelp();
+    } 
     
     while (true){
         const auto opt = getopt_long(argc, argv, short_opts, long_opts, nullptr);
