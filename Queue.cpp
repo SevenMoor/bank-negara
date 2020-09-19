@@ -26,14 +26,19 @@ bool Queue::isEmpty(){
 
 void Queue::add(Client client){
     clients.push_back(client); 
+
+    //We don't forget to increase max length if necessary
     if(maxLength< (int) clients.size())
         maxLength++;
 }
 
 Client Queue::pop(){
     Client client = clients.front(); 
+
+    //We register average length as integration
     averageLength += (bank->getSimulation()->getCurrentTime() - client.getArrivalTime()) * clients.size(); 
     clients.pop_front(); 
+    
     return client; 
 }
 

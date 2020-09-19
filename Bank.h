@@ -13,10 +13,6 @@
 #include "Cashier.h"
 #include "Queue.h"
 
-#include <cstdlib>
-#include <iostream>
-#include <ctime>
-
 class Simulation;
 class Queue;
 

@@ -10,10 +10,12 @@ Bank::Bank(int cashierCount, double averageServiceTime, Simulation *simulation){
     this->cashierCount = cashierCount; 
     this->averageServiceTime = averageServiceTime; 
     this->simulation = simulation; 
-    cashiers = new Cashier[cashierCount]; 
-    srand(time(nullptr)); 
+    cashiers = new Cashier[cashierCount];
+
+    //We fill in the cashier array
     for(int i=0; i<cashierCount; i++)
         cashiers[i] =  Cashier(averageServiceTime, this); 
+        
     queue = new Queue(this); 
 }
 

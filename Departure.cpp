@@ -13,7 +13,10 @@ void Departure::process() {
 	Client next;
 	Queue *queue = simulation->getBank()->getQueue();
 
+	//If clients are waiting in queue...
 	if (!queue->isEmpty()){
+
+		//...We take it, register his wait time, and serve it
 		next = queue->pop();
 		double waitTime = simulation->getCurrentTime()-next.getArrivalTime();
 		simulation->provideWaitTimeEntry(waitTime);
@@ -21,6 +24,5 @@ void Departure::process() {
 	}
 	else
 		cashier->free();
-
-	//delete client;
+	delete client;
 }

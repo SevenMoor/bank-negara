@@ -43,7 +43,6 @@ void Simulation::printResults(){
         }
     }
     cout << "Client count: " << sum << endl;
-
     double avgWait = totalWaitTime / sum;
     cout << "Average wait time: " << avgWait << endl;    
 }

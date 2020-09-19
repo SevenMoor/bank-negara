@@ -14,7 +14,9 @@ SED::SED() {
 
 void SED::start() {
 	Event *e = nullptr;
-	while (!schedule.empty()) {
+
+	//We treat events chronologically by taking them from the priority queue
+	while (!schedule.empty()){
 		e = schedule.top();
 		currentTime = e->getTime();
 		schedule.pop();

@@ -7,6 +7,7 @@
 #include "Poisson.h"
 
 Cashier::Cashier(){
+    //Fake cashier to be consistant in Bank::freeCashier()
     exists = false; 
 }
 
@@ -40,7 +41,11 @@ bool Cashier::isAvailable(){
 void Cashier::serve(Client* client){
     double rand = Poisson::next(averageServiceTime);
     double departureTime = bank->getSimulation()->getCurrentTime()+rand;
-    bank->getSimulation()->add(new Departure(client, this, departureTime, bank->getSimulation()));  
+
+    //We plan the end of service as Departure
+    bank->getSimulation()->add(new Departure(client, this, departureTime, bank->getSimulation()));
+
+    //We add the service time to total, increase served client count and make cashier unavailable
     isBusy += rand;
     clientCount++;
     available = false;
